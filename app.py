@@ -28,18 +28,15 @@ def plot_quadratic_eq(a, b, c):
     plt.legend()
     st.pyplot(plt)
 
-def main():
-    st.sidebar.header('Input')
-    a = st.sidebar.number_input('Coefficient a', value=1)
-    b = st.sidebar.number_input('Coefficient b', value=1)
-    c = st.sidebar.number_input('Coefficient c', value=1)
+st.sidebar.header('Input')
+a = st.sidebar.number_input('Coefficient a', value=1)
+b = st.sidebar.number_input('Coefficient b', value=1)
+c = st.sidebar.number_input('Coefficient c', value=1)
 
-    if st.sidebar.button('Solve'):
-        roots = quadratic_eq_solver(a, b, c)
-        df = pd.DataFrame({'Roots': roots})
-        st.write(df)
+if st.sidebar.button('Solve'):
+    roots = quadratic_eq_solver(a, b, c)
+    df = pd.DataFrame({'Roots': roots})
+    st.write(df)
 
-        plot_quadratic_eq(a, b, c)
+    plot_quadratic_eq(a, b, c)
 
-if __name__ == '__main__':
-    main()
