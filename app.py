@@ -34,7 +34,7 @@ def plot_quadratic_eq(a, b, c):
 st.title('Solver App')
 menu_option = st.sidebar.selectbox(
     "Menú",["Resolver ecuaciones de segundo grado o menor",
-            "ajustar ecuación cuadrática segun los datos"])
+            "Ajustar ecuación cuadrática segun los datos"])
 if menu_option == "Resolver ecuaciones de segundo grado o menor":
 
     # User input for coefficients
