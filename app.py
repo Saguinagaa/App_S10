@@ -26,7 +26,7 @@ if add_button:
     points = [p.strip() for p in points_input.split(',')] if ',' in points_input else points_input.split()
     for point in points:
         x, y = map(float, point.split())
-        data = data.append({'X': x, 'Y': y}, ignore_index=True)
+        data = data._append({'X': x, 'Y': y}, ignore_index=True)
     st.success(f'Se han agregado los puntos: {points}')
 
 st.header('Puntos Ingresados')
