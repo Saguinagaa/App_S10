@@ -21,7 +21,7 @@ def plot_quadratic_eq(a, b, c):
     y = a * x ** 2 + b * x + c
 
     plt.figure(figsize=(8, 6))
-    plt.plot(x, y, label=f'{a}x^2 + {b}x + {c} = 0')
+    plt.plot(x, y, label=f'{round(a,2)}x^2 + {round(b,2)}x + {round(c,2)} = 0')
     plt.axhline(0, color='black', linewidth=0.5)
     plt.axvline(0, color='black', linewidth=0.5)
     plt.xlabel('x')
@@ -38,9 +38,9 @@ menu_option = st.sidebar.selectbox(
 if menu_option == "Resolver ecuaciones de segundo grado o menor":
 
     # User input for coefficients
-    a = st.number_input('Coefficient a', value=1)
-    b = st.number_input('Coefficient b', value=1)
-    c = st.number_input('Coefficient c', value=1)
+    a = st.number_input('Coeficiente de a/x^2', value=1)
+    b = st.number_input('Coeficient e de b/^1', value=1)
+    c = st.number_input('Coeficient e de c/constante', value=1)
 
     # Solve button
     if st.button('Solve'):
@@ -87,7 +87,7 @@ if menu_option == "Ajustar ecuación cuadrática segun los datos":
         popt, _ = curve_fit(quadratic_func, x_values, y_values)
 
         # Mostrar los coeficientes de la ecuación cuadrática
-        st.write(f'La ecuación cuadrática ajustada es: Y = {popt[0]} * X^2 + {popt[1]} * X + {popt[2]}')
+        st.write(f'La ecuación cuadrática ajustada es: Y = {round(popt[0], 2)} * X^2 + {round(popt[1], 2)} * X + {round(popt[2], 2)}')
 
     # Graficar los puntos y la curva ajustada
         plt.figure(figsize=(8, 6))
