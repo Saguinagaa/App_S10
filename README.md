@@ -4,4 +4,4 @@
 de la Universidad Nacional de Colombia, por Sebastian Aguinaga
 Velásquez y permite resolver ecuaciones de grado 2 o menor y
 ajustar curvas cuadráticas segun los datos que el 
-usuario ingrese
+usuario ingrese.
