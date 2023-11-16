@@ -86,7 +86,8 @@ if menu_option == "Ajustar ecuación cuadrática segun los datos":
 
     # Entrada para ingresar múltiples puntos separados por comas o espacios
     points_input = st.text_input(
-        'Ingrese los puntos \(X Y, separados por comas o espacios):')
+        'Ingrese los puntos con el siguiente formato \
+            X1 Y1, X2 Y2, X3 Y3')
     add_button = st.button('Agregar Puntos')
 
     if add_button:
