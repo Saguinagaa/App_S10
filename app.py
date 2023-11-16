@@ -17,17 +17,21 @@ data = pd.DataFrame(columns=['X', 'Y'])
 
 st.header('Ingresar Puntos (X, Y)')
 
-# Entrada para ingresar puntos
-x_input = st.number_input('Ingrese el valor de X:')
-y_input = st.number_input('Ingrese el valor de Y:')
-add_button = st.button('Agregar Punto')
+# Entrada para ingresar múltiples puntos separados por comas o espacios
+points_input = st.text_input('Ingrese los puntos (X Y, separados por comas o espacios):')
+add_button = st.button('Agregar Puntos')
 
 if add_button:
-    data = data._append({'X': x_input, 'Y': y_input}, ignore_index=True)
-    st.success(f'Se ha agregado el punto: ({x_input}, {y_input})')
+    # Dividir la entrada en puntos individuales y agregarlos al DataFrame
+    points = [p.strip() for p in points_input.split(',')] if ',' in points_input else points_input.split()
+    for point in points:
+        x, y = map(float, point.split())
+        data = data.append({'X': x, 'Y': y}, ignore_index=True)
+    st.success(f'Se han agregado los puntos: {points}')
 
 st.header('Puntos Ingresados')
 st.write(data)
+
 
 # Realizar el ajuste de la curva si hay al menos 3 puntos
 if len(data) >= 3:
