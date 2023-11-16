@@ -15,6 +15,7 @@ def quadratic_eq_solver(a, b, c):
     roots = fsolve(equation, 0)
     return roots
 
+# Function to plot quadratic equation
 def plot_quadratic_eq(a, b, c):
     x = np.linspace(-10, 10, 400)
     y = a * x ** 2 + b * x + c
@@ -36,12 +37,13 @@ menu_option = st.sidebar.selectbox(
             "ajustar ecuación cuadrática segun los datos"])
 if menu_option == "Resolver ecuaciones de segundo grado o menor":
 
-    st.sidebar.header('Input')
-    a = st.sidebar.number_input('Coefficient a', value=1)
-    b = st.sidebar.number_input('Coefficient b', value=1)
-    c = st.sidebar.number_input('Coefficient c', value=1)
+    # User input for coefficients
+    a = st.number_input('Coefficient a', value=1)
+    b = st.number_input('Coefficient b', value=1)
+    c = st.number_input('Coefficient c', value=1)
 
-    if st.sidebar.button('Solve'):
+    # Solve button
+    if st.button('Solve'):
         roots = quadratic_eq_solver(a, b, c)
         df = pd.DataFrame({'Roots': roots})
         st.write(df)
