@@ -23,7 +23,7 @@ y_input = st.number_input('Ingrese el valor de Y:')
 add_button = st.button('Agregar Punto')
 
 if add_button:
-    data = data.append({'X': x_input, 'Y': y_input}, ignore_index=True)
+    data = data._append({'X': x_input, 'Y': y_input}, ignore_index=True)
     st.success(f'Se ha agregado el punto: ({x_input}, {y_input})')
 
 st.header('Puntos Ingresados')
