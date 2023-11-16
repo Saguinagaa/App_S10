@@ -45,8 +45,8 @@ def plot_quadratic_eq(a, b, c):
     y = a * x ** 2 + b * x + c
 
     plt.figure(figsize=(8, 6))
-    plt.plot(x, y,label=f'{round(a,2)}x^2\
-              + {round(b,2)}x^1+ {round(c,2)} = 0')
+    plt.plot(x, y,label=f'{round(a, 2)}x^2\
+              + {round(b, 2)}x^1+ {round(c, 2)} = 0')
     plt.axhline(0, color='black', linewidth=0.5)
     plt.axvline(0, color='black', linewidth=0.5)
     plt.xlabel('x')
@@ -132,6 +132,3 @@ if menu_option == "Ajustar ecuación cuadrática segun los datos":
     else:
         st.warning('Se necesitan al menos 3 puntos\
                     para ajustar una curva cuadrática.')
-
-    else:
-        st.warning('Se necesitan al menos 3 puntos para ajustar una curva cuadrática.')
